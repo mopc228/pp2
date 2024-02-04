@@ -75,9 +75,10 @@ movies = [
 "category": "Romance"
 }
 ]
-def myFunction(name, imdb):
-    if (movies.values(0)==name ):
-        return True
-    else:
-        return False
-
+def imdbcheck(movie):
+    return movie["imdb"]>5.5
+sublist = []
+for movie in movies:
+    if imdbcheck(movie):
+        sublist.append(movie["name"])
+print(str(sublist) + " - имеют IMDB больше 5.5.")
