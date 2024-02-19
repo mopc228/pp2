@@ -1,0 +1,33 @@
+import cv2
+
+cap = cv2.VideoCapture(0)
+
+if not cap.isOpened():
+    print("Error")
+    exit()
+
+frames = []
+
+while True:
+    ret, img = cap.read()
+    cv2.imshow("camera", img)
+
+   
+    frames.append(img)
+
+    if cv2.waitKey(10) == 27:
+        break
+
+cap.release()
+cv2.destroyAllWindows()
+
+
+output_file_path = 'C:\\Users\\kazbe\\OneDrive\\Desktop\\daulet\\output_video.avi'
+
+fourcc = cv2.VideoWriter_fourcc(*'XVID')
+out = cv2.VideoWriter(output_file_path, fourcc, 20.0, (640, 480)) 
+
+for frame in frames:
+    out.write(frame)
+
+out.release()
