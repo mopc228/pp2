@@ -1,4 +1,1 @@
-import datetime
-current_time = datetime.datetime.now()
-yesterday = current_time - datetime.timedelta(days=1)
-print(yesterday)
+collision_sound.play()
