@@ -3,7 +3,7 @@ import pygame
 pygame.init()
 pygame.mixer.init()
 
-screen = pygame.display.set_mode((500, 500))
+screen = pygame.display.set_mode((200, 100))
 songs = ["C:\\Users\\kazbe\\Downloads\\1.mp3", "C:\\Users\\kazbe\\Downloads\\2.mp3", "C:\\Users\\kazbe\\Downloads\\3.mp3"]
 i = 0
 current = songs[i]

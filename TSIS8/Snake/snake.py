@@ -95,7 +95,7 @@ def main():
     clock = pygame.time.Clock()
 
     while True:
-        screen.fill((0, 0, 0))
+        screen.fill((255, 255, 255))
         snake.handle_keys()
         snake.move()
         

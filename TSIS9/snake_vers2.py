@@ -15,6 +15,7 @@ font_small = pygame.font.SysFont("Verdana", 20)
 speed = 1
 score = 1
 
+#Needed time for food's dissapearing
 TIME_LIMIT = pygame.USEREVENT + 1
 pygame.time.set_timer(TIME_LIMIT, 3000)
 
@@ -62,7 +63,7 @@ class Snake:
         for p in self.positions:
             r = pygame.Rect((p[0], p[1]), (GRID_SIZE, GRID_SIZE))
             pygame.draw.rect(surface, self.color, r)
-            pygame.draw.rect(surface, WHITE, r, 1)
+            pygame.draw.rect(surface, (0, 0, 0), r, 1)
 
     # def handle_keys(self):
     #     for event in pygame.event.get():
@@ -94,7 +95,7 @@ class Food:
     def draw(self, surface):
         r = pygame.Rect((self.position[0], self.position[1]), (GRID_SIZE, GRID_SIZE))
         pygame.draw.rect(surface, self.color, r)
-        pygame.draw.rect(surface, WHITE, r, 1)
+        pygame.draw.rect(surface, (0, 0, 0), r, 1)
 
     
 # Main function
@@ -105,7 +106,7 @@ def main():
 
     while True:
         global speed, score
-        screen.fill((0, 0, 0))
+        screen.fill((255, 255, 255))
         # snake.handle_keys()
         snake.move()
         total_score = random.randint(1, 3)
@@ -144,7 +145,4 @@ def main():
         food.draw(screen)
         pygame.display.update()
         clock.tick(8 + speed)
-        
-
-if __name__ == '__main__':
-    main()
+main()
